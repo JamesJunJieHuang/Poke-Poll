@@ -63,8 +63,8 @@ const ResultsPage = (props) => {
         </Link>
       </div>
       <div className="ResultsContainer">
-        {pollResultsArr.map((el) => {
-          return <VotedPokemon pokemonImg={el[0]} voteQty={el[1]} highestVotes={highestVotes}/>;
+        {pollResultsArr.map((el, index) => {
+          return <VotedPokemon key={index} pokemonImg={el[0]} voteQty={el[1]} highestVotes={highestVotes}/>;
         })}
       </div>
     </section>

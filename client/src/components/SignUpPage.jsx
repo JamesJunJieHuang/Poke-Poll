@@ -35,6 +35,9 @@ const SignUpPage = (props) => {
         if (response.status === 400) {
           throw new Error("Username already exists");
         }
+        if (response.status === 422) {
+          throw new Error("Username and password fields cannot be empty");
+        }
         return response.json();
       })
       .then((data) => {
