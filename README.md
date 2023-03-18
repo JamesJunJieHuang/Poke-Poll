@@ -8,3 +8,14 @@ Poke Poll is a polling application where users can create an account and log in 
 - [ ]  run `npm install` to install dependencies
 - [ ]  run `npm test` to run your test suite
 - [ ] `npm run dev` to start your server on port 3000 and your client on port 8080
+
+## How to use the application
+1. Access your browser and go to the following url: http://localhost:8080/
+You are able to create an account or log in.
+
+2. After you are logged in, you will be on the vote page: http://localhost:8080/Vote
+On this page, you are able to search for the specific Gen 1 Pokemon of your choice and vote for your favorite.
+To vote, you will need to use your cursor and click on the pokemon of your choice.
+
+3. To access the poll results of every users' favorite Gen 1 Pokemon, you can either click the Poll Results button on the top right of the Vote page or directly go to the following url: http://localhost:8080/results
+
