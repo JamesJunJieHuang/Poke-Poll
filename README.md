@@ -19,3 +19,5 @@ To vote, you will need to use your cursor and click on the pokemon of your choic
 
 3. To access the poll results of every users' favorite Gen 1 Pokemon, you can either click the Poll Results button on the top right of the Vote page or directly go to the following url: http://localhost:8080/results
 
+## Regarding the .env file
+I have included the .env as you will need my MongoDBURI in order to use this application. The database has been initialized to include the necesarry collections for this application to function.
