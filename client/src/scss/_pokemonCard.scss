@@ -1,0 +1,164 @@
+.PokemonImage {
+  background: #35d8a4;
+  border: 0.28vw solid rgb(248, 214, 41);
+  padding: 0.56vw 0.7vw;
+  margin: 0px 0vw;
+  height: 7.28vw;
+  width: 7.28vw;
+}
+
+.PokemonCard {
+  border: 0.56vw solid rgb(248, 214, 41);
+  border-radius: 0.49vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 16.8vw;
+  width: 11.2vw;
+}
+
+h2 {
+  font-size: 0.84vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: red;
+}
+
+#pokeCardName {
+  font-weight: 900;
+  color: black;
+}
+
+
+.PokeCardHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 8.96vw;
+}
+
+.CardStats {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.7vw;
+  align-items: center;
+  border: 0.7px solid black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.Pokeball {
+  width: 3.36vw;
+  height: 3.36vw;
+  margin-top: 0.84vw;
+}
+
+.PokeballDiv .Pokeball {
+  display: none;
+}
+
+.PokemonCard:hover {
+  box-shadow: 0 0 10px 0 rgb(255, 255, 255);
+  .Pokeball {
+    display: block;
+  }
+}
+
+//Fave Pokemon Card
+.FavePokemonImage {
+  background: #35d8a4;
+  border: 0.25rem solid rgb(248, 214, 41);
+  padding: 0.5rem 0.7rem;
+  height: 7.28rem;
+  width: 7.28rem;
+}
+
+.FavePokemonCard {
+  border: 0.56rem solid rgb(248, 214, 41);
+  border-radius: 0.49rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 16.8rem;
+  width: 11.2rem;
+  box-shadow: 0 0 20px 0 rgb(255, 238, 0);
+}
+
+.FavePokeCardHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 8.96rem;
+}
+
+#FavePokeCardName {
+  font-weight: 900;
+  color: black;
+  font-size: 0.84rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+#FavePokeCardHP {
+  font-size: 0.84rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: red;
+}
+
+.FavePokeball {
+  width: 3.36rem;
+  height: 3.36rem;
+  margin-top: 0.84rem;
+}
+
+@media only screen and (max-width: 600px) {
+//Fave Pokemon Card - Mobile
+.FavePokemonImage {
+  background: #35d8a4;
+  border: 0.1875rem solid rgb(248, 214, 41);
+  padding: 0.375rem 0.525rem;
+  height: 5.46rem;
+  width: 5.46rem;
+}
+
+.FavePokemonCard {
+  border: 0.2352rem solid rgb(248, 214, 41);
+  border-radius: 0.3675rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 12.6rem;
+  width: 8.4rem;
+  box-shadow: 0 0 15px 0 rgb(255, 238, 0);
+}
+
+.FavePokeCardHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 6.72rem;
+}
+
+#FavePokeCardName {
+  font-weight: 900;
+  color: black;
+  font-size: 0.63rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+#FavePokeCardHP {
+  font-size: 0.63rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: red;
+}
+
+.FavePokeball {
+  width: 2.52rem;
+  height: 2.52rem;
+  margin-top: 0.63rem;
+}
+
+}

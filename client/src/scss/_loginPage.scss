@@ -1,0 +1,36 @@
+.LoginForm{
+  margin-top: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.LogInButton{
+  margin-top: 1vw;
+  width: 6vw;
+  height: 3vw;
+}
+
+.LogInPokePollImage {
+  height: 3.5rem;
+  margin-top: 2rem;
+}
+
+.underForm{
+  display: flex;
+  justify-content: center;
+}
+
+.SignUpButton {
+  width: 6vw;
+  height: 3vw;
+}
+
+.Textfield{
+  background-color: white;
+}
+
+.Link{
+  text-decoration: none;
+  color: black;
+}

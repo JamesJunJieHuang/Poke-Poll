@@ -1,0 +1,116 @@
+body {
+  background: #1c2e4e;
+}
+
+.PokePollImage {
+  height: 3.5rem;
+}
+
+.Banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.FaveCardContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.CardsContainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 2.5vw;
+  place-items: center;
+  width: 95%;
+  margin: 5vw auto;
+}
+
+.FaveAndSearch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //height: 25rem;
+  margin-top: 7rem;
+  .Instructions {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .ChosenPokemonText {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+  }
+}
+
+.SearchBar {
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .MuiInputBase-input {
+    font-size: 15px;
+  }
+  .MuiInputLabel-root {
+    font-size: 15px;
+  }
+  #Search {
+    width: 20rem;
+  }
+}
+
+.SearchBarContainer {
+}
+
+@media only screen and (max-width: 600px) {
+  .PokePollImage {
+    height: 2rem;
+  }
+
+  .NavButton {
+    font-size: 0.5rem;
+    padding: 0.1rem;
+  }
+
+  .CardsContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 2.5vw;
+    margin-top: 5vw;
+    place-items: center;
+    width: 95%;
+    margin: 3vw auto;
+  }
+
+  .FaveAndSearch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    .Instructions {
+      font-size: 1rem;
+    }
+    .ChosenPokemonText {
+      font-size: 1rem;
+    }
+  }
+
+  .SearchBar {
+    margin-left: 0rem;
+  .MuiInputBase-input {
+    font-size: 15px;
+  }
+  .MuiInputLabel-root {
+    font-size: 15px;
+  }
+  #Search {
+  }
+}
+}
+
+// * {
+//   border: 1px solid red;
+// }
