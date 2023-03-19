@@ -12,10 +12,11 @@ Poke Poll is a polling application where users can create an account and log in 
 - [ ] `npm run dev` to start your server on port 3000 and your client on port 8080
 
 ## How to use the application
-1. Access your browser and go to the following url: http://localhost:8080/. You are able to create a new account and log in.
+1. Access your browser and go to the following url: http://localhost:8080/. 
+- [ ] You are able to directly see poll results without logging in.
+- [ ] You are able to create a new account and log in.
 
-Or you can use one of the existing test accounts: 
-
+Or you can use one of the existing test accounts to log in if you do not feel like creating a new account: 
 - [ ]  Username: 'test' / Password: 'test'
 - [ ]  Username: 'test1' / Password: 'test1'
 - [ ]  Username: 'test2' / Password: 'test2'
