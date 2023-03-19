@@ -38,6 +38,7 @@ userController.loginUser = async (req, res, next) => {
       //creates session and save in database and send cookie with session_id to client
       req.session.isAuth = true;
       req.session.username = username;
+      req.session.favPokemon_id = user.favoritePokemon;
       return next();
     } else {
       res.status(401).json({ error: "Invalid login information" });
@@ -75,6 +76,7 @@ userController.voteByUser = async (req, res, next) => {
   );
 
   res.locals.favPokemon_id = favPokemon_id;
+  req.session.favPokemon_id = favPokemon_id;
   return next();
 };
 

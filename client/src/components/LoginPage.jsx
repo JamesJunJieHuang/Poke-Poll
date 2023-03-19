@@ -104,6 +104,18 @@ const LoginPage = (props) => {
             </Button>
           </Link>
         </div>
+        <div className="underForm">
+          <Button
+            variant="contained"
+            sx={{
+              bgcolor: "#42a5f5",
+              color: "#ffffff",
+            }}
+            onClick={() => navigate("/results")}
+          >
+            SEE POLL RESULTS
+          </Button>
+        </div>
       </div>
     </section>
   );

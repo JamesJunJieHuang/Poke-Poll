@@ -5,7 +5,10 @@ const resultsController = {};
 
 resultsController.getResults = async (req, res, next) => {
   const results = await Result.findOne();
-  res.locals.results = results.pollResults;
+  res.locals.results = {
+    result: results.pollResults,
+    favPokemon_id: req.session.favPokemon_id,
+  };
   return next();
 };
 

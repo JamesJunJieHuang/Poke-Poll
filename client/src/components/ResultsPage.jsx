@@ -9,6 +9,7 @@ import VotedPokemon from './VotedPokemon.jsx';
 const ResultsPage = (props) => {
   const [pollResultsArr, setPollResultsArr] = useState([]);
   const [highestVotes, setHighestVotes] = useState(0);
+  const [favPokemon_id, setFavPokemon_id] = useState(0);
 
   useEffect(() => {
     //fetch results from server -> database
@@ -25,12 +26,15 @@ const ResultsPage = (props) => {
         return response.json();
       })
       .then((resultsObj) => {
+        console.log('resultsobj: ', resultsObj)
         const resultsArr = [];
-        for (const [key, value] of Object.entries(resultsObj)) {
+        setFavPokemon_id(resultsObj.favPokemon_id);
+        for (const [key, value] of Object.entries(resultsObj.result)) {
           resultsArr.push([
             `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${key}.png`,
             value,
           ]);
+
         }
         //filter results to only contain pokemon with votes
         const filteredResults = resultsArr.filter((el) => {
@@ -44,7 +48,7 @@ const ResultsPage = (props) => {
         filteredResults.sort(function (a, b) {
           return b[1] - a[1];
         });
-        //console.log(filteredResults);
+        console.log('filteredResults: ', filteredResults);
         setPollResultsArr(filteredResults);
         setHighestVotes(filteredResults[0][1]);
       })
@@ -64,7 +68,15 @@ const ResultsPage = (props) => {
       </div>
       <div className="ResultsContainer">
         {pollResultsArr.map((el, index) => {
-          return <VotedPokemon key={index} pokemonImg={el[0]} voteQty={el[1]} highestVotes={highestVotes}/>;
+          return (
+            <VotedPokemon
+              favPokemon_id={favPokemon_id}
+              key={index}
+              pokemonImg={el[0]}
+              voteQty={el[1]}
+              highestVotes={highestVotes}
+            />
+          );
         })}
       </div>
     </section>

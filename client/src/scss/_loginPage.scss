@@ -5,11 +5,6 @@
   align-items: center;
 }
 
-.LogInButton{
-  margin-top: 1vw;
-  width: 6vw;
-  height: 3vw;
-}
 
 .LogInPokePollImage {
   height: 3.5rem;
@@ -17,13 +12,9 @@
 }
 
 .underForm{
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
-}
-
-.SignUpButton {
-  width: 6vw;
-  height: 3vw;
 }
 
 .Textfield{
