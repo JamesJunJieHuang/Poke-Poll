@@ -16,10 +16,10 @@ Poke Poll is a polling application where users can create an account and log in 
 
 Or you can use one of the existing test accounts: 
 
-- [ ]  Username: test / Password: test
-- [ ]  Username: test1 / Password: test1
-- [ ]  Username: test2 / Password: test2
-- [ ]  Username: test3 / Password: test3
+- [ ]  Username: 'test' / Password: 'test'
+- [ ]  Username: 'test1' / Password: 'test1'
+- [ ]  Username: 'test2' / Password: 'test2'
+- [ ]  Username: 'test3' / Password: 'test3'
 
 2. After you are logged in, you will be on the vote page: http://localhost:8080/Vote. 
 On this page, you are able to search for the specific Gen 1 Pokemon of your choice and vote for your favorite.
