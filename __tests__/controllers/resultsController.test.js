@@ -15,14 +15,18 @@ describe("resultsController", () => {
       const mockResults = { pollResults: { 1: 5, 2: 3 } };
       Result.findOne = jest.fn().mockResolvedValue(mockResults);
 
-      const req = {};
+      const req = {
+        session: {
+          favPokemon_id: 1
+        }
+      };
       const res = { locals: {} };
       const next = jest.fn();
 
       await resultsController.getResults(req, res, next);
 
       expect(Result.findOne).toHaveBeenCalledTimes(1);
-      expect(res.locals.results).toEqual(mockResults.pollResults);
+      expect(res.locals.results).toEqual({result: mockResults.pollResults, favPokemon_id: 1});
       expect(next).toHaveBeenCalledTimes(1);
     });
   });

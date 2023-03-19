@@ -25,10 +25,6 @@ module.exports = {
         },
       },
       {
-        test: /\.svg$/,
-        use: ["@svgr/webpack"],
-      },
-      {
         test: /\.(png|jpe?g|gif)$/i,
         type: "asset",
         parser: {
@@ -71,12 +67,6 @@ module.exports = {
       publicPath: "/",
       directory: path.join(__dirname, "./client"),
     },
-    // proxy: {
-    //   context: ["api/**"],
-    //   target: "http://localhost:3000/",
-    //   secure: false,
-    //   "/dogs": "http://localhost:3000/",
-    // },
     proxy: {
       "/api/**": {
         target: "http://localhost:3000",

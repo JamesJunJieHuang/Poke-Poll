@@ -16,8 +16,6 @@
   "dependencies": {
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
     "@mui/material": "^5.11.12",
     "babel-loader": "^9.1.2",
     "bcrypt": "^5.1.0",
@@ -51,9 +49,6 @@
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
     "jest-mock": "^27.4.7",
-    "jest-puppeteer": "^6.1.0",
-    "puppeteer": "^14.2.1",
-    "supertest": "^6.2.3",
     "webpack-cli": "^5.0.1"
   }
 }
