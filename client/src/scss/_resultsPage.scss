@@ -36,7 +36,14 @@
   margin-left: 1rem;
 }
 
-
+.TotalVotes {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
 
 // *{
 //   border: 1px solid red;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import VoteResultsBar from './VoteResultsBar.jsx'
+import VoteResultsBar from './VoteResultsBar.jsx';
 
 const VotedPokemon = (props) => {
   let fave = false;
@@ -12,6 +12,7 @@ const VotedPokemon = (props) => {
       <img className="VotedPokemonImg" src={props.pokemonImg} />
       <VoteResultsBar
         highestVotes={props.highestVotes}
+        totalVotes={props.totalVotes}
         voteQty={props.voteQty}
         fave={fave}
       />

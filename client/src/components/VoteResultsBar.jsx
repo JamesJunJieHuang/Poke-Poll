@@ -21,7 +21,7 @@ export default function VoteResultsBar(props) {
         >
           <CardContent className="ResultBarContent">
             <Typography className="ResultBarText" fontSize="1rem">
-              {`${props.voteQty}`}
+              {`${(props.voteQty / props.totalVotes) * 100}%`}
             </Typography>
             <div className="PokeballDiv">
               <img src={pokeball} alt="Image" className="ResultPokeball" />
@@ -37,13 +37,13 @@ export default function VoteResultsBar(props) {
             height: "3rem",
             display: "flex", // Add flex display to center the content vertically
             alignItems: "center", // Center content vertically
-            backgroundColor: "FD6F51", // Change the color of the card
+            backgroundColor: "#FD6F51", // Change the color of the card
             color: "white", // Change the text color
           }}
         >
           <CardContent className="ResultBarContent">
             <Typography className="ResultBarText" fontSize="1rem">
-              {`${props.voteQty}`}
+              {`${(props.voteQty / props.totalVotes) * 100}%`}
             </Typography>
             <div className="PokeballDiv">
               <img src={pokeball} alt="Image" className="ResultPokeball" />

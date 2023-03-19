@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import styles from "../scss/application.scss";
 import pokePollBanner from "../assets/PokePollBanner.png";
 import { Link, useNavigate } from "react-router-dom";
-import VotedPokemon from './VotedPokemon.jsx';
-
-
+import VotedPokemon from "./VotedPokemon.jsx";
+import Typography from "@mui/material/Typography";
 
 const ResultsPage = (props) => {
   const [pollResultsArr, setPollResultsArr] = useState([]);
   const [highestVotes, setHighestVotes] = useState(0);
+  const [totalVotes, setTotalVotes] = useState(0);
   const [favPokemon_id, setFavPokemon_id] = useState(0);
 
   useEffect(() => {
@@ -26,16 +26,18 @@ const ResultsPage = (props) => {
         return response.json();
       })
       .then((resultsObj) => {
-        console.log('resultsobj: ', resultsObj)
+        console.log("resultsobj: ", resultsObj);
         const resultsArr = [];
+        let sumvotes = 0;
         setFavPokemon_id(resultsObj.favPokemon_id);
         for (const [key, value] of Object.entries(resultsObj.result)) {
           resultsArr.push([
             `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${key}.png`,
             value,
           ]);
-
+          sumvotes += value;
         }
+        setTotalVotes(sumvotes);
         //filter results to only contain pokemon with votes
         const filteredResults = resultsArr.filter((el) => {
           return (
@@ -48,7 +50,7 @@ const ResultsPage = (props) => {
         filteredResults.sort(function (a, b) {
           return b[1] - a[1];
         });
-        console.log('filteredResults: ', filteredResults);
+        console.log("filteredResults: ", filteredResults);
         setPollResultsArr(filteredResults);
         setHighestVotes(filteredResults[0][1]);
       })
@@ -63,7 +65,7 @@ const ResultsPage = (props) => {
     <section className="ResultsPage">
       <div className="Banner">
         <Link to="/Vote">
-        <img className="ResultsPokePollImage" src={pokePollBanner} />
+          <img className="ResultsPokePollImage" src={pokePollBanner} />
         </Link>
       </div>
       <div className="ResultsContainer">
@@ -75,10 +77,12 @@ const ResultsPage = (props) => {
               pokemonImg={el[0]}
               voteQty={el[1]}
               highestVotes={highestVotes}
+              totalVotes={totalVotes}
             />
           );
         })}
       </div>
+      <h2 className='TotalVotes'>{`${totalVotes} Votes`}</h2>
     </section>
   );
 };
