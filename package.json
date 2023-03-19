@@ -45,14 +45,15 @@
     "webpack-dev-server": "^4.11.1"
   },
   "devDependencies": {
+    "@jest/globals": "^27.4.7",
     "babel-jest": "^23.6.0",
+    "concurrently": "^7.6.0",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
+    "jest-mock": "^27.4.7",
     "jest-puppeteer": "^6.1.0",
     "puppeteer": "^14.2.1",
     "supertest": "^6.2.3",
-    "webpack-cli": "^5.0.1",
-    "@jest/globals": "^27.4.7",
-    "jest-mock": "^27.4.7"
+    "webpack-cli": "^5.0.1"
   }
 }
