@@ -22,7 +22,8 @@ Password: test
 
 2. After you are logged in, you will be on the vote page: http://localhost:8080/Vote. 
 On this page, you are able to search for the specific Gen 1 Pokemon of your choice and vote for your favorite.
-To vote, you will need to use your cursor and click on the pokemon of your choice.
+To vote, you will need to use your cursor and click on the pokemon of your choice. 
+Feel free to change your choice at any time. After all... We Gotta Catch Em' All!
 
 3. To access the poll results of every users' favorite Gen 1 Pokemon, you can either click the Poll Results button on the top right of the Vote page or directly go to the following url: http://localhost:8080/results
 
