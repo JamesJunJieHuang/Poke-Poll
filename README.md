@@ -7,6 +7,7 @@ Poke Poll is a polling application where users can create an account and log in 
 ## Setup
 - [ ]  Clone Repo
 - [ ]  run `npm install` to install dependencies
+- [ ]  If VSCode asks if you would like to add node_modules into .gitignore, click 'Yes'
 - [ ]  run `npm test` to run your test suite
 - [ ] `npm run dev` to start your server on port 3000 and your client on port 8080
 
