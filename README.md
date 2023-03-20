@@ -5,6 +5,7 @@ Code Foo 2023 Application (Engineering)
 Poke Poll is a polling application where users can create an account and log in to vote on their favorite Gen 1 Pokemon!
 
 ## Setup
+- [ ]  Make sure you have Node.js and npm downloaded and installed
 - [ ]  Clone Repo
 - [ ]  run `npm install` to install dependencies
 - [ ]  If VSCode asks if you would like to add node_modules into .gitignore, click 'Yes'
