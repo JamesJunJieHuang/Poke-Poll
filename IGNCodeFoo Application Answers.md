@@ -18,7 +18,7 @@ Third, I will need to find out the minimum power a Voltorb is able to produce. W
 - [ ]  A single Voltorb is able to produce 2,500 kilowatt-hours (kWh) in its' lifetime.
 
 Fourth, if we divide 267,875 kilowatt-hours (the amount of kWh that Jubilife Village needs annually) by 2,500 kilowatt-hours (the amount of kWh a single Voltorb can produce), it would take approximately 108 Voltorbs to fully power Jubilife Village for the year. 
-- [ ]  Answer: 108 Voltorbs for the year.
+- [ ]  Answer: 108 Voltorbs are needed to fully power Jubilife Village annually. 
 
 Additionally, with every blunt force solution, there lies a more efficient one. Instead of catching so many Voltorbs, it is also worth considering to instead catch a single Zapdos, as it produces more electricity than a Voltorb.  
 
