@@ -12,13 +12,13 @@ I would love to intern for IGN as I have a passion for games, old and new, and a
 First, I want to understand my list of given information. Currently, we are given the height (1'08") and weight (22.8lbs) of a Voltorb. This is not enough information for me to calculate the amount of Voltorbs needed to fully power Jubilife Village. This means that I will need to obtain certain information in order to solve this problem.
 
 Second, I will need to find out how much power does Jubilife Village need. This can be dependent on how many buildings or households in the village. According to the Hisui Region map that IGN provides (https://www.ign.com/maps/pokemon-legends-arceus/hisui-region), Jubilife Village currently holds 21 average sized buildings which includes smaller commercial shops and residential structures. There are two larger structures in Jubilife Village, the Galaxy Hall and the Training Ground Building which will be considered as two average sized buildings each. This will result in our total buildings in the village to be approximately 25 average sized buildings. According to Forbes (https://www.forbes.com/home-improvement/home/how-many-watts-run-house/) and the U.S. Energy Information Administration (EIA), the average amount of electricity an American home uses annually is around 10,715 kilowatt-hours (kWh). This means that Jubilife Village will need approximately 267,875 kilowatt-hours (kWh) to be fully powered for the year. 
--[] Jubilife Village needs approximately 267,875 kilowatt-hours (kWh) annually.
+- [ ]  Jubilife Village needs approximately 267,875 kilowatt-hours (kWh) annually.
 
 Third, I will need to find out the minimum power a Voltorb is able to produce. With this information, I can divide the 'power that is needed by the Village' by the 'minimum power a Voltorb is able to produce' to get the amount of Voltorbs needed to fully power the village. The Hisuian Voltorb is an electric/grass type pokemon that is capable of using the move 'Thunderbolt'. According to an online source, TTD (https://ttd.gov/lightning-is-powerful/#:~:text=How%20much%20energy%20is%20in,kilowatt%2Dhours%20of%20energy), an average lightning bolt produces around 250 kilowatt-hours (kWh). In Pokemon Legends: Arceus, the move 'Thunderbolt' has 10 PP. Let's assume a single Voltorb is only able to use the move 'Thunderbolt' to produce a lightning bolt 10 times in its' life span before it retires and is unable to use the move. This would mean a single Voltorb can produce up to 250 kilowatt-hours (kWh) per thunderbolt or 2,500 kilowatt-hours (kWh) in its' lifetime. 
--[] A single Voltorb is able to produce 2,500 kilowatt-hours (kWh) in its' lifetime.
+- [ ]  A single Voltorb is able to produce 2,500 kilowatt-hours (kWh) in its' lifetime.
 
 Fourth, if we divide 267,875 kilowatt-hours (the amount of kWh that Jubilife Village needs annually) by 2,500 kilowatt-hours (the amount of kWh a single Voltorb can produce), it would take approximately 108 Voltorbs to fully power Jubilife Village for the year. 
--[] Answer: 108 Voltorbs for the year.
+- [ ]  Answer: 108 Voltorbs for the year.
 
 Additionally, with every blunt force solution, there lies a more efficient one. Instead of catching so many Voltorbs, it is also worth considering to instead catch a single Zapdos, as it produces more electricity than a Voltorb.  
 
