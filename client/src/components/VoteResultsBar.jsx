@@ -21,7 +21,7 @@ export default function VoteResultsBar(props) {
         >
           <CardContent className="ResultBarContent">
             <Typography className="ResultBarText" fontSize="1rem">
-              {`${(props.voteQty / props.totalVotes) * 100}%`}
+              {`${((props.voteQty / props.totalVotes) * 100).toFixed(1)}%`}
             </Typography>
             <div className="PokeballDiv">
               <img src={pokeball} alt="Image" className="ResultPokeball" />
@@ -43,7 +43,7 @@ export default function VoteResultsBar(props) {
         >
           <CardContent className="ResultBarContent">
             <Typography className="ResultBarText" fontSize="1rem">
-              {`${(props.voteQty / props.totalVotes) * 100}%`}
+              {`${((props.voteQty / props.totalVotes) * 100).toFixed(1)}%`}
             </Typography>
             <div className="PokeballDiv">
               <img src={pokeball} alt="Image" className="ResultPokeball" />
