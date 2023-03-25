@@ -60,13 +60,14 @@ module.exports = {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Headers": "*",
     },
+    open: true,
     port: 8080,
     host: "localhost",
     historyApiFallback: true,
     static: {
       publicPath: "/",
       directory: path.join(__dirname, "./client"),
-    },
+    }, 
     proxy: {
       "/api/**": {
         target: "http://localhost:3000",

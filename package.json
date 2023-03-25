@@ -5,9 +5,9 @@
   "main": "webpack.config.js",
   "proxy": "http://localhost:3000/",
   "scripts": {
-    "start": "nodemon server/server.js",
-    "build": "cross-env NODE_ENV=production webpack",
-    "dev": "concurrently \"NODE_ENV=development nodemon ./server/server.js\" \"NODE_ENV=development webpack serve\"",
+    "start": "NODE_ENV=production nodemon server/server.js",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "dev": "concurrently \"NODE_ENV=development nodemon ./server/server.js\" \"NODE_ENV=development webpack serve\" ",
     "test": "jest --verbose"
   },
   "keywords": [],
@@ -24,7 +24,6 @@
     "body-parser": "^1.20.2",
     "connect-mongodb-session": "^3.1.1",
     "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.3",
     "dotenv": "^16.0.3",

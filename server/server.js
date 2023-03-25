@@ -10,7 +10,6 @@ const getPokemonRouter = require("./routes/getPokemonRouter");
 const resultsRouter = require("./routes/resultsRouter");
 const Result = require("./models/ResultModel");
 const Pokemon = require("./models/PokemonModel");
-const cors = require("cors");
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
 const store = require("./store");
@@ -20,10 +19,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(cors({ origin: "http://localhost:8080", credentials: true }));
 
-// handle requests for static files
-app.use(express.static(path.resolve(__dirname, "../client")));
+//console.log(process.env.NODE_ENV);
+if (process.env.NODE_ENV === "production") {
+  // serve the production assets
+  app.use(express.static(path.resolve(__dirname, "../build")));
+} 
 
 mongoose.set("strictQuery", false);
 //mongodb connection & port listener
