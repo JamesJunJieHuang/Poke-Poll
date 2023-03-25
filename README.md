@@ -14,7 +14,7 @@ Poke Poll is a polling application where users can create an account and log in 
 - [ ]  Run the command `npm start` to start our server on port 3000
 
 ## Optional - Unit Testing
-- [ ]  Run `npm test` to run unit controller test suite
+- [ ]  On another terminal, run the command `npm test` to run unit controller test suite
 
 ## How to use the application
 1. Access your browser and go to the following url: http://localhost:3000/. 
