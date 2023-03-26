@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import PokemonCard from "./PokemonCard.jsx";
 import FavePokemonCard from "./FavePokemonCard.jsx";
 import NavBar from "./NavBar.jsx";
-import styles from "../scss/application.scss";
-import pokePollBanner from "../assets/PokePollBanner.png";
 import { useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";

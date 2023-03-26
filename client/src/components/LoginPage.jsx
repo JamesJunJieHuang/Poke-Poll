@@ -69,13 +69,17 @@ const LoginPage = (props) => {
           />
           <TextField
             className="textfield"
-            id="filled-basic"
+            id="filled-basic-2"
             label="Password"
+            type="password"
             variant="filled"
             onChange={handlePasswordChange}
             value={password}
             sx={{
               borderRadius: "8px",
+              '& input[type="password"]': {
+                WebkitTextSecurity: "disc",
+              },
             }}
           />
           <Button

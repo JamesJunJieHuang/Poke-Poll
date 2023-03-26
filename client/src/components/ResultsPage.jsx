@@ -13,6 +13,7 @@ const ResultsPage = (props) => {
 
   useEffect(() => {
     //fetch results from server -> database
+    //console.log('hit resultsPage')
     fetch("/api/results", {
       method: "GET",
       headers: {
@@ -20,13 +21,14 @@ const ResultsPage = (props) => {
       },
     })
       .then((response) => {
+        //console.log('result page /api/results get response: ', response)
         if (response.status === 401) {
           throw new Error("Unauthorized");
         }
         return response.json();
       })
       .then((resultsObj) => {
-        console.log("resultsobj: ", resultsObj);
+        //console.log("resultsobj: ", resultsObj);
         const resultsArr = [];
         let sumvotes = 0;
         setFavPokemon_id(resultsObj.favPokemon_id);
@@ -50,7 +52,7 @@ const ResultsPage = (props) => {
         filteredResults.sort(function (a, b) {
           return b[1] - a[1];
         });
-        console.log("filteredResults: ", filteredResults);
+        //console.log("filteredResults: ", filteredResults);
         setPollResultsArr(filteredResults);
         setHighestVotes(filteredResults[0][1]);
       })

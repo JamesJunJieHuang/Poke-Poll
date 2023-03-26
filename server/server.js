@@ -20,12 +20,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-//console.log(process.env.NODE_ENV);
-if (process.env.NODE_ENV === "production") {
-  // serve the production assets
-  app.use(express.static(path.resolve(__dirname, "../build")));
-} 
-
 mongoose.set("strictQuery", false);
 //mongodb connection & port listener
 mongoose
@@ -53,10 +47,22 @@ app.use(
   })
 );
 
+if (process.env.NODE_ENV === "production") {
+  // serve the production assets
+  app.use(express.static(path.join(__dirname, "../build")));
+}
+
 //Routes
 app.use("/api/getPokemon", getPokemonRouter);
 app.use("/api/user", userRouter);
 app.use("/api/results", resultsRouter);
+
+
+if (process.env.NODE_ENV === "production") {
+  app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, "../build", "index.html"));
+  });
+}
 
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) =>

@@ -74,20 +74,24 @@ const SignUpPage = (props) => {
           />
           <TextField
             className="textfield"
-            id="filled-basic"
+            id="filled-basic-1"
             label="Password"
+            type="password"
             variant="filled"
             onChange={handlePasswordChange}
             value={password}
             sx={{
               borderRadius: "8px",
+              '& input[type="password"]': {
+                WebkitTextSecurity: "disc",
+              },
             }}
           />
           <div className="underForm">
             <Button
               type="submit"
               onClick={handleSubmit}
-              variant='contained'
+              variant="contained"
               sx={{
                 bgcolor: "#42a5f5",
                 color: "#ffffff",
