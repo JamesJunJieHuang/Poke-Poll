@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import pokePollBanner from "../assets/PokePollBanner.png";
 import TextField from "@mui/material/TextField";
@@ -33,20 +33,25 @@ const SignUpPage = (props) => {
     })
       .then((response) => {
         if (response.status === 400) {
-          throw new Error("Username already exists");
+          props.handleError("Username already exists");
+          setUsername("");
+          setPassword("");
+          navigate("/SignUp"); // redirect back to sign up page
         }
         if (response.status === 422) {
-          throw new Error("Username and password fields cannot be empty");
+          props.handleError("Username and password fields cannot be empty");
+          setUsername("");
+          setPassword("");
+          navigate("/SignUp"); // redirect back to sign up page
+        }
+        if (response.status === 200) {
+          navigate("/"); // redirect back to sign in
         }
         return response.json();
       })
-      .then((data) => {
-        //console.log("Success:", data);
-        navigate("/"); // redirect to the home page on success aka login page
-      })
       .catch((error) => {
         console.error("Error:", error);
-        props.handleError(error.message)
+        props.handleError(error.message);
         navigate("/SignUp"); // redirect back to sign up page
       });
   };

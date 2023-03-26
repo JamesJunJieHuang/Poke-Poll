@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import pokePollBanner from "../assets/PokePollBanner.png";
 import TextField from "@mui/material/TextField";
@@ -32,12 +32,15 @@ const LoginPage = (props) => {
     })
       .then((response) => {
         if (response.status === 401) {
-          throw new Error("Incorrect Login Information");
+          props.handleError("Incorrect Login Information");
+          setUsername("");
+          setPassword("");
+          navigate("/"); // redirect back to login page
+        }
+        if (response.status === 200) {
+          navigate("/Vote"); // redirect to the vote page on success
         }
         return response.json();
-      })
-      .then((data) => {
-        navigate("/Vote"); // redirect to the vote page on success
       })
       .catch((error) => {
         console.error("Error:", error);

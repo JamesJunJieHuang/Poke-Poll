@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import styles from "../scss/application.scss";
 import pokePollBanner from "../assets/PokePollBanner.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import VotedPokemon from "./VotedPokemon.jsx";
-import Typography from "@mui/material/Typography";
 
 const ResultsPage = (props) => {
   const [pollResultsArr, setPollResultsArr] = useState([]);

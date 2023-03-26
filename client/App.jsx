@@ -6,6 +6,7 @@ import SignUpPage from "./src/components/SignUpPage.jsx";
 import ResultsPage from "./src/components/ResultsPage.jsx";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import './src/scss/application.scss';
 
 const App = () => {
   const navigate = useNavigate();

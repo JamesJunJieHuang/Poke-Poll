@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import pokemonAudio from "../assets/pokemonChosen.mp3";
 import pokeball from '../assets/pokeball.png'
 

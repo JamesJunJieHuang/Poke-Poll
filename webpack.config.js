@@ -67,7 +67,7 @@ module.exports = {
     static: {
       publicPath: "/",
       directory: path.join(__dirname, "./client"),
-    }, 
+    },
     proxy: {
       "/api/**": {
         target: "http://localhost:3000",

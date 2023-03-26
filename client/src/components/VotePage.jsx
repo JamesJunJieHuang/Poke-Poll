@@ -8,7 +8,6 @@ import Typography from "@mui/material/Typography";
 
 const VotePage = (props) => {
   const [pokemonCards, setPokemonCards] = useState([]);
-  const [filteredCards, setFilteredCards] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [chosenPokemonId, setChosenPokemonId] = useState(0);
   const navigate = useNavigate();
@@ -41,7 +40,8 @@ const VotePage = (props) => {
       })
         .then((response) => {
           if (response.status === 401) {
-            throw new Error("Unauthorized");
+            // props.handleError("Please Log In With Correct Credentials To Vote");
+            navigate("/"); // redirect back to login page
           }
           return response.json();
         })
@@ -63,7 +63,8 @@ const VotePage = (props) => {
       })
         .then((response) => {
           if (response.status === 401) {
-            throw new Error("Unauthorized");
+            // props.handleError("Please Log In With Correct Credentials To Vote");
+            navigate("/"); // redirect back to login page
           }
           return response.json();
         })

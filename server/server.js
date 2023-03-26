@@ -47,8 +47,8 @@ app.use(
   })
 );
 
+// serve the production assets
 if (process.env.NODE_ENV === "production") {
-  // serve the production assets
   app.use(express.static(path.join(__dirname, "../build")));
 }
 

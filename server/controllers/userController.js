@@ -8,7 +8,10 @@ const userController = {};
 userController.createUser = async (req, res, next) => {
   const { username, password } = req.body;
   const user = await User.findOne({ username });
-  if (user) res.status(400).send({ message: "Username already exists" });
+  if (user) {
+    res.status(400).send({ message: "Username already exists" });
+    return;
+  }
   if (username.trim() === "" || password.trim() === "")
     res
       .status(422)
