@@ -19,12 +19,10 @@ const VotePage = (props) => {
     })
       .then((response) => {
         if (response.ok) {
-          // The user has been logged out successfully
-          // Redirect the user to the login page or update the UI as necessary
+          // Success
+          // Redirect to login page
           navigate("/");
-        } else {
-          // Handle the error case
-        }
+        } 
       })
       .catch((error) => {
         console.error("Error logging out:", error);
@@ -41,14 +39,13 @@ const VotePage = (props) => {
       })
         .then((response) => {
           if (response.status === 401) {
-            // props.handleError("Please Log In With Correct Credentials To Vote");
             navigate("/"); // redirect back to login page
             return null;
-          }
-          return response.json();
+          } if (response.ok) return response.json();
         })
         .then((data) => {
           if (data) {
+            //if success, create pokemonArr and set fave pokemon
             setPokemonCards(data.pokemonArr.pokemonList);
             setChosenPokemonId(data.favPokemon_id);
           }
@@ -104,9 +101,7 @@ const VotePage = (props) => {
                   sx={{
                     bgcolor: "white",
                     borderRadius: "8px",
-                    // marginLeft: "rem",
                     "@media (max-width: 600px)": {
-                      // Add your media query styles here
                       width: "15rem",
                       borderRadius: "8px",
                     },
@@ -118,7 +113,6 @@ const VotePage = (props) => {
                   sx={{
                     color: "white",
                     "@media (max-width: 600px)": {
-                      // Add your media query styles here
                       marginLeft: "0rem",
                     },
                   }}
@@ -132,7 +126,6 @@ const VotePage = (props) => {
                     sx={{
                       color: "white",
                       "@media (max-width: 600px)": {
-                        // Add your media query styles here
                         marginLeft: "0rem",
                       },
                     }}

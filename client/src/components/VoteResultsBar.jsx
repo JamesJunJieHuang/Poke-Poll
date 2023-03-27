@@ -13,10 +13,10 @@ export default function VoteResultsBar(props) {
           sx={{
             width: `${(props.voteQty / props.highestVotes) * 100}%`,
             height: "3rem",
-            display: "flex", // Add flex display to center the content vertically
-            alignItems: "center", // Center content vertically
-            backgroundColor: "#4dabf5", // Change the color of the card
-            color: "white", // Change the text color
+            display: "flex", 
+            alignItems: "center", 
+            backgroundColor: "#4dabf5", 
+            color: "white", 
           }}
         >
           <CardContent className="ResultBarContent">
@@ -35,10 +35,10 @@ export default function VoteResultsBar(props) {
           sx={{
             width: `${(props.voteQty / props.highestVotes) * 100}%`,
             height: "3rem",
-            display: "flex", // Add flex display to center the content vertically
-            alignItems: "center", // Center content vertically
-            backgroundColor: "#FD6F51", // Change the color of the card
-            color: "white", // Change the text color
+            display: "flex", 
+            alignItems: "center", 
+            backgroundColor: "#FD6F51", 
+            color: "white", 
           }}
         >
           <CardContent className="ResultBarContent">

@@ -14,8 +14,7 @@ router.post("/login", userController.loginUser, (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
-  // Perform any necessary cleanup or session termination here
-  // For example, if you are using session cookies, you might destroy the session:
+  // log out and terminate session
   req.session.destroy((err) => {
     if (err) {
       console.log(err);

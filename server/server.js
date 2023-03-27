@@ -57,7 +57,7 @@ app.use("/api/getPokemon", getPokemonRouter);
 app.use("/api/user", userRouter);
 app.use("/api/results", resultsRouter);
 
-
+//production serve build html 
 if (process.env.NODE_ENV === "production") {
   app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, "../build", "index.html"));

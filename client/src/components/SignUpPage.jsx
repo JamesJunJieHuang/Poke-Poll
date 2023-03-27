@@ -19,8 +19,7 @@ const SignUpPage = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // perform login logic here
-    //console.log("before fetch");
+    //sign up fetch call
     fetch("/api/user/signup", {
       method: "POST",
       headers: {
