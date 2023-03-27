@@ -5,6 +5,7 @@ import NavBar from "./NavBar.jsx";
 import { useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
+import pokePollBanner from "../assets/PokePollBanner.png";
 
 const VotePage = (props) => {
   const [pokemonCards, setPokemonCards] = useState([]);
@@ -64,7 +65,11 @@ const VotePage = (props) => {
 
   return (
     <>
-      {pokemonCards.length !== 0 && (
+      {pokemonCards.length === 0 ? (
+        <div className="Banner">
+          <img className="LogInPokePollImage" src={pokePollBanner} />
+        </div>
+      ) : (
         <section className="VotePage">
           <NavBar
             handleLogOut={handleLogOut}
