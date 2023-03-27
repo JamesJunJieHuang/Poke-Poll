@@ -55,17 +55,6 @@ userController.loginUser = async (req, res, next) => {
   }
 };
 
-//get curr fave pokemon
-userController.getCurrFave = async (req, res, next) => {
-  const user = await User.findOne({ username: req.session.username });
-  if (!user) {
-    res.status(401).send({ message: "user can't be found" })
-  } else {
-    res.locals.currFave = user.favoritePokemon;
-  }
-  return next();
-};
-
 //vote action performed by user
 userController.voteByUser = async (req, res, next) => {
   const { favPokemon_id } = req.body;
@@ -86,7 +75,8 @@ userController.voteByUser = async (req, res, next) => {
 //checks if user is authenticated and authorized
 userController.isAuth = async (req, res, next) => {
   if (req.session.isAuth) {
-    //console.log(req.session);
+    //console.log('reqsession', req.session);
+    res.locals.favPokemon_id = req.session.favPokemon_id;
     return next();
   } else {
     //console.log("unauthorized");

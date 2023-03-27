@@ -5,10 +5,6 @@ const session = require('express-session')
 
 const router = express.Router();
 
-router.get("/getCurrFave", userController.getCurrFave, (req, res) => {
-  res.status(200).json(res.locals.currFave)
-});
-
 router.post("/signup", userController.createUser, (req, res) => {
     res.status(200).json(res.locals.newUser)
 });

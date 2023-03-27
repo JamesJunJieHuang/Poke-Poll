@@ -16,7 +16,10 @@ router.post(
 
 //before getting pokemon data and user data, we need to check if user is authenticated and authorized to be on this page
 router.get("/", userController.isAuth, pokemonController.getPokemon, (req, res) => {
-  res.status(200).json(res.locals.pokemonArr);
+  res.status(200).json({
+    pokemonArr: res.locals.pokemonArr,
+    favPokemon_id: res.locals.favPokemon_id
+  });
 });
 
 

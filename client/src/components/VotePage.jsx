@@ -42,34 +42,15 @@ const VotePage = (props) => {
           if (response.status === 401) {
             // props.handleError("Please Log In With Correct Credentials To Vote");
             navigate("/"); // redirect back to login page
+            return null;
           }
           return response.json();
         })
         .then((data) => {
-          setPokemonCards(data.pokemonList);
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-          props.handleError(error.message);
-          navigate("/"); // redirect back to login page
-        });
-    };
-    const getCurrFavePokemon = () => {
-      fetch("/api/user/getCurrFave", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((response) => {
-          if (response.status === 401) {
-            // props.handleError("Please Log In With Correct Credentials To Vote");
-            navigate("/"); // redirect back to login page
+          if (data) {
+            setPokemonCards(data.pokemonArr.pokemonList);
+            setChosenPokemonId(data.favPokemon_id);
           }
-          return response.json();
-        })
-        .then((data) => {
-          setChosenPokemonId(data);
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -79,7 +60,6 @@ const VotePage = (props) => {
     };
 
     getPokemon();
-    getCurrFavePokemon();
   }, []);
 
   return (
