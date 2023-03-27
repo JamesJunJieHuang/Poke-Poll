@@ -63,117 +63,124 @@ const VotePage = (props) => {
   }, []);
 
   return (
-    <section className="VotePage">
-      <NavBar
-        handleLogOut={handleLogOut}
-        handleResults={() => navigate("/results")}
-      />
-      <div
-        className="FaveAndSearch"
-        style={{
-          height: !(pokemonCards.length && chosenPokemonId) ? "15rem" : "25rem",
-        }}
-      >
-        <div className="FaveCardContainer">
-          {(pokemonCards.length & chosenPokemonId) !== 0 && (
-            <FavePokemonCard pokemonInfo={pokemonCards[chosenPokemonId - 1]} />
-          )}
-        </div>
-        <div className="SearchBarContainer">
-          <div className="SearchBar">
-            <TextField
-              id="search"
-              label="Search Generation 1 Pokemon..."
-              variant="filled"
-              value={searchQuery}
-              onChange={(event) => {
-                setSearchQuery(event.target.value);
-              }}
-              margin="normal"
-              sx={{
-                bgcolor: "white",
-                borderRadius: "8px",
-                // marginLeft: "rem",
-                "@media (max-width: 600px)": {
-                  // Add your media query styles here
-                  width: "15rem",
-                  borderRadius: "8px",
-                },
-              }}
-            />
-            <Typography
-              className="Instructions"
-              variant="body1"
-              sx={{
-                color: "white",
-                "@media (max-width: 600px)": {
-                  // Add your media query styles here
-                  marginLeft: "0rem",
-                },
-              }}
-            >
-              Click to vote on your favorite pokemon!
-            </Typography>
-            {(pokemonCards.length & chosenPokemonId) !== 0 && (
-              <Typography
-                className="ChosenPokemonText"
-                variant="body1"
-                sx={{
-                  color: "white",
-                  "@media (max-width: 600px)": {
-                    // Add your media query styles here
-                    marginLeft: "0rem",
-                  },
-                }}
-              >
-                <strong>
-                  I choose you,{" "}
-                  {pokemonCards[chosenPokemonId - 1].name
-                    .charAt(0)
-                    .toUpperCase() +
-                    pokemonCards[chosenPokemonId - 1].name.slice(1)}
-                </strong>
-                !
-              </Typography>
-            )}
-          </div>
-        </div>
-      </div>
-      <div className="CardsContainer">
-        {searchQuery !== "" &&
-          pokemonCards
-            .filter(
-              (pokemonInfo) =>
-                pokemonInfo.name.toLowerCase().slice(0, searchQuery.length) ===
-                searchQuery.toLowerCase()
-            )
-            .map((pokemonInfo, index) => {
-              return (
-                <PokemonCard
-                  key={index}
-                  pokemonInfo={pokemonInfo}
-                  setChosenPokemonId={setChosenPokemonId}
-                  setSearchQuery={setSearchQuery}
+    <>
+      {pokemonCards.length !== 0 && (
+        <section className="VotePage">
+          <NavBar
+            handleLogOut={handleLogOut}
+            handleResults={() => navigate("/results")}
+          />
+          <div
+            className="FaveAndSearch"
+            style={{
+              height: !(pokemonCards.length && chosenPokemonId)
+                ? "15rem"
+                : "25rem",
+            }}
+          >
+            <div className="FaveCardContainer">
+              {(pokemonCards.length & chosenPokemonId) !== 0 && (
+                <FavePokemonCard
+                  pokemonInfo={pokemonCards[chosenPokemonId - 1]}
                 />
-              );
-            })}
-        {searchQuery === "" &&
-          pokemonCards.map((pokemonInfo, index) => {
-            return (
-              <PokemonCard
-                key={index}
-                pokemonInfo={pokemonInfo}
-                setChosenPokemonId={setChosenPokemonId}
-                chosenPokemonId={chosenPokemonId}
-                setSearchQuery={setSearchQuery}
-              />
-            );
-          })}
-      </div>
-      {/* {console.log("pokemoncards: ", pokemonCards)}
-      {console.log("chosenPokemonId: ", chosenPokemonId)} */}
-      {/* <div>{JSON.stringify(pokemonCards)}</div> */}
-    </section>
+              )}
+            </div>
+            <div className="SearchBarContainer">
+              <div className="SearchBar">
+                <TextField
+                  id="search"
+                  label="Search Generation 1 Pokemon..."
+                  variant="filled"
+                  value={searchQuery}
+                  onChange={(event) => {
+                    setSearchQuery(event.target.value);
+                  }}
+                  margin="normal"
+                  sx={{
+                    bgcolor: "white",
+                    borderRadius: "8px",
+                    // marginLeft: "rem",
+                    "@media (max-width: 600px)": {
+                      // Add your media query styles here
+                      width: "15rem",
+                      borderRadius: "8px",
+                    },
+                  }}
+                />
+                <Typography
+                  className="Instructions"
+                  variant="body1"
+                  sx={{
+                    color: "white",
+                    "@media (max-width: 600px)": {
+                      // Add your media query styles here
+                      marginLeft: "0rem",
+                    },
+                  }}
+                >
+                  Click to vote on your favorite pokemon!
+                </Typography>
+                {(pokemonCards.length & chosenPokemonId) !== 0 && (
+                  <Typography
+                    className="ChosenPokemonText"
+                    variant="body1"
+                    sx={{
+                      color: "white",
+                      "@media (max-width: 600px)": {
+                        // Add your media query styles here
+                        marginLeft: "0rem",
+                      },
+                    }}
+                  >
+                    <strong>
+                      I choose you,{" "}
+                      {pokemonCards[chosenPokemonId - 1].name
+                        .charAt(0)
+                        .toUpperCase() +
+                        pokemonCards[chosenPokemonId - 1].name.slice(1)}
+                    </strong>
+                    !
+                  </Typography>
+                )}
+              </div>
+            </div>
+          </div>
+          <div className="CardsContainer">
+            {searchQuery !== "" &&
+              pokemonCards
+                .filter(
+                  (pokemonInfo) =>
+                    pokemonInfo.name
+                      .toLowerCase()
+                      .slice(0, searchQuery.length) ===
+                    searchQuery.toLowerCase()
+                )
+                .map((pokemonInfo, index) => {
+                  return (
+                    <PokemonCard
+                      key={index}
+                      pokemonInfo={pokemonInfo}
+                      setChosenPokemonId={setChosenPokemonId}
+                      setSearchQuery={setSearchQuery}
+                    />
+                  );
+                })}
+            {searchQuery === "" &&
+              pokemonCards.map((pokemonInfo, index) => {
+                return (
+                  <PokemonCard
+                    key={index}
+                    pokemonInfo={pokemonInfo}
+                    setChosenPokemonId={setChosenPokemonId}
+                    chosenPokemonId={chosenPokemonId}
+                    setSearchQuery={setSearchQuery}
+                  />
+                );
+              })}
+          </div>
+        </section>
+      )}
+    </>
   );
 };
 

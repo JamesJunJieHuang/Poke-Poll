@@ -68,21 +68,25 @@ const ResultsPage = (props) => {
           <img className="ResultsPokePollImage" src={pokePollBanner} />
         </Link>
       </div>
-      <div className="ResultsContainer">
-        {pollResultsArr.map((el, index) => {
-          return (
-            <VotedPokemon
-              favPokemon_id={favPokemon_id}
-              key={index}
-              pokemonImg={el[0]}
-              voteQty={el[1]}
-              highestVotes={highestVotes}
-              totalVotes={totalVotes}
-            />
-          );
-        })}
-      </div>
-      <h2 className='TotalVotes'>{`${totalVotes} Votes`}</h2>
+      {pollResultsArr.length !== 0 && (
+        <>
+          <div className="ResultsContainer">
+            {pollResultsArr.map((el, index) => {
+              return (
+                <VotedPokemon
+                  favPokemon_id={favPokemon_id}
+                  key={index}
+                  pokemonImg={el[0]}
+                  voteQty={el[1]}
+                  highestVotes={highestVotes}
+                  totalVotes={totalVotes}
+                />
+              );
+            })}
+          </div>
+          <h2 className="TotalVotes">{`${totalVotes} Votes`}</h2>
+        </>
+      )}
     </section>
   );
 };
